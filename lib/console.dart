@@ -134,6 +134,7 @@ class ConsoleClient implements Client {
     }
 
     final rs = await rq.done;
+    await rq.close();
     final headers = Headers();
     rs.headers.forEach((String key, List<String> values) {
       headers.add(key, values);
